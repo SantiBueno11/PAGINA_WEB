@@ -398,4 +398,10 @@ footer a:hover {
 .header-content p {
   margin-top: 0 !important;
 }
+/* --- Evita que el texto del encabezado sea seleccionable --- */
+.header-content h1,
+.header-content p {
+  user-select: none;      /* 🔹 No permite seleccionar el texto */
+  cursor: default;        /* 🔹 Mantiene el cursor normal (no la "I") */
+}
 
