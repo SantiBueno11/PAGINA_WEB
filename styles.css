@@ -375,3 +375,27 @@ footer a:hover {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+/* --- AJUSTE FINAL LOGO Y TÍTULO --- */
+.logo-lw {
+  display: block;
+  margin: 0 auto -70px auto !important; /* 🔥 margen negativo: pega el logo al texto */
+  width: 400px;
+  max-width: 45vw;
+  height: auto;
+  filter: drop-shadow(0 0 15px #00ffffaa);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.header-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-top: 0 !important; /* 🔥 elimina espacio adicional */
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px #00ffffaa;
+  transition: text-shadow 0.3s ease;
+}
+
+.header-content p {
+  margin-top: 0 !important;
+}
+
