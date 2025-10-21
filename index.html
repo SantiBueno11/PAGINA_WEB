@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanzamiento Web – Páginas para emprendedores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+    <!-- NECESARIO: Enlace a Font Awesome para el ícono de WhatsApp en el modal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Header (Inicio) -->
+  <header id="inicio">
+    <div class="header-content">
+      <h1>Lanzamiento Web</h1>
+      <p>Páginas web profesionales para emprendedores y pequeños negocios</p>
+    </div>
+  </header>
+
+  <!-- Servicios / Paquetes -->
+  <section class="services">
+    <h2>Mis Paquetes</h2>
+    <div class="cards">
+      
+      <!-- Plan Básico -->
+      <div class="card basico">
+        <h3>Plan Básico</h3>
+        <ul>
+          <li>Página de presentación con logo y descripción</li>
+          <li>Sección de contacto con WhatsApp</li>
+          <li>Diseño adaptado a celulares</li>
+        </ul>
+        <div class="price">$70.000</div>
+        <!-- CORREGIDO: Ahora llama a la función de JavaScript -->
+        <button onclick="confirmarContacto('Plan Básico')">Contactar</button>
+      </div>
+
+      <!-- Plan Intermedio -->
+      <div class="card intermedio">
+        <h3>Plan Intermedio</h3>
+        <ul>
+          <li>Todo lo del Plan Básico</li>
+          <li>Galería de productos o servicios</li>
+          <li>Enlaces a redes sociales</li>
+          <li>Diseño más personalizado</li>
+        </ul>
+        <div class="price">$120.000</div>
+        <!-- CORREGIDO: Ahora llama a la función de JavaScript -->
+        <button onclick="confirmarContacto('Plan Intermedio')">Contactar</button>
+      </div>
+      
+      <!-- Plan Avanzado -->
+      <div class="card avanzado">
+        <h3>Plan Avanzado</h3>
+        <ul>
+          <li>Todo lo del Plan Intermedio</li>
+          <li>Formulario avanzado o reservas</li>
+          <li>Animaciones y efectos visuales</li>
+          <li>Optimización de velocidad y soporte 30 días</li>
+        </ul>
+        <div class="price">$200.000</div>
+        <!-- CORREGIDO: Ahora llama a la función de JavaScript -->
+        <button onclick="confirmarContacto('Plan Avanzado')">Contactar</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 LM Web Design | <a href="https://wa.me/tu_numero">Contactame por WhatsApp</a></p>
+  </footer>
+  <!-- Redes Sociales Flotantes con Logos -->
+<div class="social-icons">
+    
+  <a href="https://www.instagram.com/tucuenta" target="_blank" class="instagram" title="Instagram">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+             onerror="this.src='https://placehold.co/50x50/FFFFFF/C13584?text=IG'" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/tucuenta" target="_blank" class="facebook" title="Facebook">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" 
+             onerror="this.src='https://placehold.co/50x50/FFFFFF/3b5998?text=FB'" alt="Facebook">
+  </a>
+    <!-- Ícono de Gmail con URL estable -->
+  <a href="mailto:tuemail@gmail.com" class="gmail" title="Gmail">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" 
+             onerror="this.src='https://placehold.co/50x50/FFFFFF/FF4500?text=Mail'" alt="Gmail">
+  </a>
+</div>
+
+<!-- ESTRUCTURA DE LA VENTANA MODAL -->
+<div id="modal-confirmacion" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="cerrarModal()">&times;</span>
+        <i class="fab fa-whatsapp modal-icon"></i>
+        <h2>Confirmar Contacto</h2>
+        <p>Estás a punto de iniciar una conversación de WhatsApp para el <strong id="plan-seleccionado"></strong>.</p>
+        <p>¿Deseas continuar?</p>
+        <div class="modal-actions">
+            <button class="modal-btn confirm-btn" onclick="redirigirAWhatsapp()">Sí, Contactar</button>
+            <button class="modal-btn cancel-btn" onclick="cerrarModal()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- CRÍTICO: Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

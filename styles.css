@@ -1,0 +1,572 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fondo oscuro texturizado aplicado a todo el cuerpo */
+    font-family: 'Poppins', sans-serif;
+    background: #1a1a1a url('https://placehold.co/100x100/1a1a1a/1a1a1a?text=.') repeat; 
+    color: #f7f7f7; /* Texto claro para fondo oscuro */
+    /* Empuje hacia abajo para el menú fijo */
+    padding-top: 60px; 
+}
+
+/* --- ESTILOS BASE DE SECCIONES --- */
+section {
+    padding: 80px 20px;
+    text-align: center;
+    /* Fondo blanco semitransparente para legibilidad sobre fondo oscuro */
+    background: rgba(255, 255, 255, 0.05); 
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #00FFFF; /* AZUL ELÉCTRICO para resaltar títulos */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* --- ESTILOS DEL MENÚ DE NAVEGACIÓN (.navbar) --- */
+
+.navbar {
+    background: #000000; /* Negro sólido */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00FFFF; /* Azul Eléctrico */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00FFFF; /* Azul Eléctrico */
+}
+
+/* Media Query para Móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-brand {
+        margin-bottom: 10px;
+    }
+    .nav-links {
+        padding: 0;
+        margin-top: 5px;
+        flex-direction: row; 
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* --- HEADER (CABECERA) --- */
+header {
+    /* RUTA FINAL CORREGIDA */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('images/fondo-lleno-lineas-codigo-simbolos-programacion_847439-55079.jpg') no-repeat center center/cover; 
+    
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: text-shadow 0.3s ease;
+}
+
+.header-content h1:hover {
+    /* Sombra azul eléctrica al pasar el ratón */
+    text-shadow: 0 0 20px #00FFFF, 0 0 30px #00FFFF;
+}
+
+.header-content p {
+    font-size: 1.4rem;
+    margin-top: 15px;
+}
+
+/* --- SECCIÓN POR QUÉ ELEGIRNOS (.why-us) --- */
+
+.why-us {
+    color: white; /* Texto blanco sobre fondo oscuro */
+}
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+.feature-item {
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.3s;
+}
+.feature-item:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+.feature-item i {
+    font-size: 3rem;
+    color: #00FFFF; /* Íconos en Azul Eléctrico */
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+.feature-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.feature-item p {
+    font-size: 1rem;
+    color: #ccc;
+}
+@media (max-width: 900px) {
+    .features-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .feature-item {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+/* --- SECCIÓN DE SERVICIOS (PLANES) --- */
+.services {
+    /* Ajuste para fondo oscuro */
+    background: rgba(255, 255, 255, 0.05);
+    color: #f7f7f7;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+.card {
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    width: 320px;
+    padding: 30px 20px;
+    color: white;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.card ul {
+    list-style: none; /* Quitamos las viñetas */
+    text-align: left;
+    margin-bottom: 25px;
+    display: inline-block;
+    padding-left: 0;
+}
+.card ul li {
+    font-weight: 400;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.card ul li::before {
+    content: "\2713"; /* Icono de checkmark */
+    color: #00FFFF; /* Azul Eléctrico para el check */
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+/* ESTILOS DE BOTONES */
+.card button {
+    display: block;
+    margin: 15px auto 0 auto;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Diferentes degradados para cada plan */
+.card.basico {
+    background: linear-gradient(135deg, #FFD700, #C5B000); /* amarillo → oro */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+.card.intermedio {
+    background: linear-gradient(135deg, #1E90FF, #0056b3); /* azul fuerte → azul marino */
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+}
+.card.avanzado {
+    background: linear-gradient(135deg, #FF0000, #8B0000); /* rojo → rojo oscuro */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+/* ESTILOS HOVER Y SOMBRAS PARA BOTONES */
+.card.basico button {
+    background: #ffc107; 
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+.card.basico button:hover {
+    background: #e0a800; 
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.8), 0 0 25px rgba(255, 193, 7, 0.6);
+    transform: translateY(-2px);
+}
+
+.card.intermedio button {
+    background: #007bff; 
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+.card.intermedio button:hover {
+    background: #0056b3; 
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), 0 0 25px rgba(0, 123, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.card.avanzado button {
+    background: #dc3545; 
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+}
+.card.avanzado button:hover {
+    background: #b02a37; 
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.8), 0 0 25px rgba(220, 53, 69, 0.6);
+    transform: translateY(-2px);
+}
+
+/* --- SECCIÓN TESTIMONIOS --- */
+.testimonials {
+    background: rgba(0, 0, 0, 0.3); /* Fondo ligeramente más oscuro */
+    border: none;
+}
+.testimonial-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border-left: 5px solid #00FFFF;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.testimonial-card .author {
+    font-weight: 600;
+    color: #00FFFF;
+    font-style: normal;
+}
+
+/* --- SECCIÓN CONTACTO (FORMULARIO) --- */
+.contact {
+    /* Ajuste para fondo oscuro */
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #00FFFF; /* Azul Eléctrico para las etiquetas */
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #00FFFF;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00FFFF;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+.submit-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(90deg, #00FFFF, #00A3A3);
+    color: #1a1a1a;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 255, 255, 0.4);
+}
+.submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #000000;
+    color: #aaa;
+    text-align: center;
+    padding: 20px 20px;
+    margin-top: 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+footer a {
+    color: #00FFFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+footer a:hover {
+    color: #fff;
+}
+
+/* ---------------------------------------------------- */
+/* --- ICONOS DE REDES SOCIALES FLOTANTES (CORRECCIÓN)--- */
+/* ---------------------------------------------------- */
+.social-icons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: flex; /* 🔑 CAMBIO CLAVE 1: Usar Flexbox para centrado */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 50px;
+    height: 50px;
+    background: #FFFFFF; /* 🔑 CAMBIO CLAVE 2: Fondo blanco para que los logos se vean mejor */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+    overflow: hidden; 
+    padding: 0; /* Aseguramos que no haya padding en el anclaje */
+    border: 2px solid #00FFFF; /* Añadimos un borde eléctrico para destacar */
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img {
+    /* 🔑 CAMBIO CLAVE 3: Establecer un tamaño fijo, ligeramente menor que el contenedor */
+    width: 80%; 
+    height: 80%;
+    object-fit: contain; /* Asegura que la imagen no se recorte */
+    border-radius: 0; 
+}
+
+
+/* --- ESTILOS DE LA VENTANA MODAL PERSONALIZADA --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 2000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8); /* Fondo negro semitransparente */
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    margin: 15% auto; /* 15% arriba y centrado */
+    padding: 30px;
+    border: 1px solid #00FFFF;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.4);
+    animation: slideIn 0.3s ease-out;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    color: #00FFFF;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: white; /* Sobreescribe el título principal h2 */
+}
+
+.modal-content p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+#plan-seleccionado {
+    font-weight: bold;
+    color: #FFD700; /* Oro para resaltar el plan */
+}
+
+.close-button {
+    color: #ccc;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 50%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.confirm-btn {
+    background-color: #00FFFF;
+    color: #1a1a1a;
+}
+
+.confirm-btn:hover {
+    background-color: #00a3a3;
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    background-color: #333;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------- */
+/* --- ESTILOS PARA ANIMACIÓN SCROLL --- */
+/* ------------------------------------- */
+
+/* Clase inicial: Oculta los elementos y los mueve ligeramente hacia abajo */
+.hidden {
+    opacity: 0;
+    /* Movemos 50px hacia abajo */
+    transform: translateY(50px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Clase final: Hace visible el elemento y lo regresa a su posición original */
+.show-effect {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animaciones del Modal */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px);}
+    to {transform: translateY(0);}
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+        margin: 30% auto;
+    }
+}
