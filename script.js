@@ -24,19 +24,19 @@ function cerrarModal() {
   }, 300);
 }
 
-/**
- * Redirige a WhatsApp con mensaje personalizado
- */
 function redirigirAWhatsapp() {
-  if (planActual) {
-    const message = encodeURIComponent(
-      `Hola, estoy interesado en el ${planActual} y me gustaría recibir más información.`
-    );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-    cerrarModal();
-  }
+    cerrarModal(); // cierra la ventana de confirmación
+
+    // muestra el formulario de contacto
+    document.getElementById("formulario-contacto").style.display = "block";
+
+    // carga el nombre del plan seleccionado
+    document.getElementById("planSeleccionadoForm").value = planActual;
+
+    // hace scroll automático hasta el formulario
+    document.getElementById("formulario-contacto").scrollIntoView({ behavior: "smooth" });
 }
+
 
 /**
  * Cierra el modal al hacer clic fuera del contenido
