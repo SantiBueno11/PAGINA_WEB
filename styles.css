@@ -114,103 +114,116 @@ header {
 }
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  align-items: stretch; /* Igual altura */
 }
 
 .card {
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-    width: 320px;
-    padding: 30px 20px;
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 🔹 Mantiene el contenido arriba */
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+  width: 320px;
+  padding: 30px 20px 20px 20px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 500px; /* 🔹 Altura uniforme pero más natural */
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.02);
 }
 
-/* Colores por plan */
+/* === Colores por plan === */
 .card.basico {
-    background: linear-gradient(135deg, #FFD700, #C5B000);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, #FFD700, #C5B000);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
-
 .card.intermedio {
-    background: linear-gradient(135deg, #1E90FF, #0056b3);
-    box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+  background: linear-gradient(135deg, #1E90FF, #0056b3);
+  box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
 }
-
 .card.avanzado {
-    background: linear-gradient(135deg, #FF0000, #8B0000);
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  background: linear-gradient(135deg, #FF0000, #8B0000);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
-/* Contenido dentro de las tarjetas */
+/* === Contenido === */
 .card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .card ul {
-    list-style: none;
-    text-align: left;
-    margin-bottom: 25px;
-    display: inline-block;
-    padding-left: 0;
+  list-style: none;
+  text-align: left;
+  margin-bottom: 30px;
+  display: inline-block;
+  padding-left: 0;
 }
 
 .card ul li {
-    font-weight: 400;
-    margin-bottom: 12px;
-    position: relative;
-    padding-left: 20px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-weight: 400;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .card ul li::before {
-    content: "\2713";
-    color: #00FFFF;
-    font-weight: 900;
-    position: absolute;
-    left: 0;
+  content: "\2713";
+  color: #00FFFF;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
 }
 
-.price {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+/* === Precio y botón juntos === */
+.card .price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
-/* === BOTONES === */
+.card .card-footer {
+  margin-top: auto; /* 🔹 Empuja el bloque hacia el final */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* === Botones === */
 .card button {
-    display: block;
-    margin: 15px auto 0;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Colores botones */
+/* === Colores botones === */
 .card.basico button { background: #ffc107; }
 .card.intermedio button { background: #007bff; }
 .card.avanzado button { background: #dc3545; }
 
 .card button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.2);
+  transform: translateY(-2px);
+  filter: brightness(1.2);
 }
+
 
 /* === ICONOS REDES SOCIALES === */
 .social-icons {
@@ -403,5 +416,14 @@ footer a:hover {
 .header-content p {
   user-select: none;      /* 🔹 No permite seleccionar el texto */
   cursor: default;        /* 🔹 Mantiene el cursor normal (no la "I") */
+}
+.descripcion {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: bold;         /* ✅ Hace la letra en negrita */
+  margin: 10px 0 0 0;
+  line-height: 1.5;
+  text-align: center;
+  width: 90%;
 }
 
