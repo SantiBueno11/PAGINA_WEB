@@ -84,3 +84,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('scroll', checkVisibility);
 window.addEventListener('resize', checkVisibility);
+
+// === INTRO ANIMADA (pantalla de carga con el logo LW) ===
+window.addEventListener("load", () => {
+  const intro = document.getElementById("intro");
+
+  // Espera 2.5 segundos y oculta el logo con un efecto suave
+  setTimeout(() => {
+    intro.style.opacity = "0";
+    setTimeout(() => {
+      intro.style.display = "none";
+    }, 800);
+  }, 2500);
+});
+

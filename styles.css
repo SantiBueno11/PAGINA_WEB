@@ -454,4 +454,33 @@ footer a:hover {
   color: #e6e6e6;
 }
 
+/* === INTRO ANIMADA === */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  transition: opacity 0.8s ease;
+}
+
+.intro-logo {
+  width: 250px;
+  animation: brillo 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 25px #00ffffaa);
+}
+
+@keyframes brillo {
+  from {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
 
