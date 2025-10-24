@@ -97,4 +97,33 @@ window.addEventListener("load", () => {
     }, 800);
   }, 2500);
 });
+function cambiarIdioma() {
+  const idioma = document.getElementById("language").value;
+
+  const textos = {
+    es: {
+      titulo: "Lanzamiento Web",
+      subtitulo: "Páginas web profesionales para emprendedores y pequeños negocios",
+      sobreMi: "Sobre mí",
+      descripcion: "¡Hola! Soy Santiago Bueno, tengo 23 años y actualmente estoy estudiando la carrera de Tecnicatura Universitaria en Desarrollo de Software. Me apasiona crear páginas web modernas, funcionales y adaptadas a las necesidades de cada cliente. Busco ayudar a emprendedores y negocios a construir su presencia digital de una manera profesional y atractiva.",
+      paquetes: "Mis Paquetes"
+    },
+    en: {
+      titulo: "Web Launch",
+      subtitulo: "Professional websites for entrepreneurs and small businesses",
+      sobreMi: "About Me",
+      descripcion: "Hi! I'm Santiago Bueno, 23 years old, currently studying a degree in Software Development. I love creating modern and functional websites tailored to each client's needs. I help entrepreneurs and businesses build their online presence in a professional and attractive way.",
+      paquetes: "My Packages"
+    }
+  };
+
+  const t = textos[idioma];
+
+  document.querySelector("h1").textContent = t.titulo;
+  document.querySelector("header p").textContent = t.subtitulo;
+  document.querySelector(".about h2").textContent = t.sobreMi;
+  document.querySelector(".about p").textContent = t.descripcion;
+  document.querySelector(".services h2").textContent = t.paquetes;
+}
+
 

@@ -489,3 +489,30 @@ footer a:hover { color: #fff; }
   z-index: -1;
   
 }
+/* === SELECTOR DE IDIOMA === */
+.language-selector {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.language-selector select {
+  background-color: #000;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  border-radius: 10px;
+  padding: 10px 20px; /* 🔹 Más grande */
+  font-size: 1.1rem;  /* 🔹 Letra más grande */
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.language-selector select:hover {
+  background-color: #00ffff;
+  color: #000;
+}
+
